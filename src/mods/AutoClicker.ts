@@ -9,17 +9,16 @@ function AutoClickerMod(mod: JsMod) {
         t++;
         const cps = mod.getIntProperty("CPS");
         const tpc = 20 / cps;
-        if (t > tpc) {
+        if (t >= tpc) {
             t -= tpc;
             // Click
             lp.swing();
             const lvl = lp.getLevel();
             const hitResult = lvl.getHitResult();
-            if (hitResult.isHit()) {
-                const hitEnt = hitResult.getEntity();
-                if (hitEnt != null)
-                    lp.gameMode.attack(hitEnt);
-            }
+            const hitEnt = hitResult.getEntity();
+
+            if (hitEnt != null)
+                lp.gameMode.attack(hitEnt);
 
         }
         if (t > 20)
