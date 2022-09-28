@@ -538,6 +538,85 @@ declare class BaseGameVersion {
 	fromJsonArray(_1: object, _2: object): bigint;	// fromJsonArray(Json::Value const &,SemVersion &): enum SemVersion::MatchType	 /// ?fromJsonArray@SemVersion@@SA?AW4MatchType@1@AEBVValue@Json@@AEAV1@@Z
 	getMinor(): number;	// getMinor(void): unsigned short	 /// ?getMinor@SemVersion@@QEBAGXZ
 }
+declare class GameRules { 
+	// Attributes 
+	// Methods 
+	// Inherited from GameRules
+	GameRules(): GameRules;	// GameRules(void)	 /// ??0GameRules@@QEAA@XZ
+	_setGameRule(_1: object, _2: unknown, _3: unknown, _4: boolean, _5: object, _6: object, _7: object): bigint;	 /// ?_setGameRule@GameRules@@AEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@PEAVGameRule@@TValue@4@W4Type@4@_NPEA_N4PEAVValidationError@4@@Z
+	createAllGameRulesPacket(): unknown;	// createAllGameRulesPacket(void): class std::unique_ptr<class GameRulesChangedPacket,struct std::default_delete<class GameRulesChangedPacket> >	 /// ?createAllGameRulesPacket@GameRules@@QEBA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@XZ
+	deserializeRules(_1: object): void;	// deserializeRules(GameRulesChangedPacketData const &): void	 /// ?deserializeRules@GameRules@@QEAAXAEBVGameRulesChangedPacketData@@@Z
+	getBool(_1: unknown, _2: boolean): boolean;	// getBool(GameRuleId,bool): bool	 /// ?getBool@GameRules@@QEBA_NUGameRuleId@@_N@Z
+	getInt(_1: unknown): number;	// getInt(GameRuleId): int	 /// ?getInt@GameRules@@QEBAHUGameRuleId@@@Z
+	setRule(_1: unknown, _2: boolean, _3: boolean, _4: object, _5: object, _6: object): unknown;	// setRule(GameRuleId,bool,bool,bool *,bool *,GameRule::ValidationError *): class std::unique_ptr<class GameRulesChangedPacket,struct std::default_delete<class GameRulesChangedPacket> >	 /// ?setRule@GameRules@@QEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@_N1PEA_N2PEAVValidationError@GameRule@@@Z
+	setRule(_1: unknown, _2: number, _3: boolean, _4: object, _5: object, _6: object): unknown;	// setRule(GameRuleId,float,bool,bool *,bool *,GameRule::ValidationError *): class std::unique_ptr<class GameRulesChangedPacket,struct std::default_delete<class GameRulesChangedPacket> >	 /// ?setRule@GameRules@@QEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@M_NPEA_N2PEAVValidationError@GameRule@@@Z
+}
+declare class BlockPalette { 
+	// Attributes 
+	blocks: SDKVectorContainer;
+	// Methods 
+	// Inherited from BlockPalette
+	BlockPalette(_1: object): BlockPalette;	// BlockPalette(Level &)	 /// ??0BlockPalette@@QEAA@AEAVLevel@@@Z
+	getBlock(_1: object): Block;	// getBlock(CompoundTag const &): class Block const & __ptr64	 /// ?getBlock@BlockPalette@@QEBAAEBVBlock@@AEBVCompoundTag@@@Z
+	getBlock(_1: object): Block;	// getBlock(uint const &): class Block const & __ptr64	 /// ?getBlock@BlockPalette@@QEBAAEBVBlock@@AEBI@Z
+	getBlockFromLegacyData(_1: unknown, _2: bigint): Block;	// getBlockFromLegacyData(NewBlockID,uint): class Block const & __ptr64	 /// ?getBlockFromLegacyData@BlockPalette@@QEBAAEBVBlock@@UNewBlockID@@I@Z
+	initFromBlockDefinitions(): void;	// initFromBlockDefinitions(void): void	 /// ?initFromBlockDefinitions@BlockPalette@@QEAAXXZ
+	shouldWarnFor(_1: unknown, _2: number): boolean;	// shouldWarnFor(NewBlockID,ushort): bool	 /// ?shouldWarnFor@BlockPalette@@AEBA_NUNewBlockID@@G@Z
+	switchBlock(_1: object, _2: object): Block;	// switchBlock(Block const &,BlockLegacy const &): class Block const & __ptr64	 /// ?switchBlock@BlockPalette@@QEBAAEBVBlock@@AEBV2@AEBVBlockLegacy@@@Z
+}
+declare class ActorEventPacket { 
+	// Attributes 
+	actorRuntimeId: bigint;
+	dispatcher: PacketHandlerDispatcherInstance;
+	eventId: number;
+	eventData: number;
+	// Methods 
+	// Inherited from ActorEventPacket
+	_read(_1: object): bigint;	// _read(ReadOnlyBinaryStream &): enum StreamReadResult	 /// ?_read@ActorEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+	getId(): bigint;	// getId(void): enum MinecraftPacketIds	 /// ?getId@ActorEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+	getName(): unknown;	// getName(void): class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >	 /// ?getName@ActorEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+	write(_1: object): void;	// write(BinaryStream &): void	 /// ?write@ActorEventPacket@@UEBAXAEAVBinaryStream@@@Z
+	// Inherited from Packet
+	readExtended(_1: object): unknown;	// readExtended(ReadOnlyBinaryStream &): struct ExtendedStreamReadResult	 /// ?readExtended@Packet@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+}
+declare class LevelDataWrapper { 
+	// Attributes 
+	levelData: LevelData;
+	// Methods 
+	// Inherited from LevelDataWrapper
+}
+declare class GameMode { 
+	// Attributes 
+	// Methods 
+	// Inherited from GameMode
+	_canDestroy(_1: object, _2: number): boolean;	// _canDestroy(BlockPos const &,uchar): bool	 /// ?_canDestroy@GameMode@@AEAA_NAEBVBlockPos@@E@Z
+	attack(_1: object): boolean;	// attack(Actor &): bool	 /// ?attack@GameMode@@UEAA_NAEAVActor@@@Z
+	baseUseItem(_1: object): boolean;	// baseUseItem(ItemStack &): bool	 /// ?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z
+	buildBlock(_1: object, _2: number, _3: boolean): boolean;	// buildBlock(BlockPos const &,uchar,bool): bool	 /// ?buildBlock@GameMode@@UEAA_NAEBVBlockPos@@E_N@Z
+	continueBuildBlock(_1: object, _2: number): void;	// continueBuildBlock(BlockPos const &,uchar): void	 /// ?continueBuildBlock@GameMode@@UEAAXAEBVBlockPos@@E@Z
+	continueDestroyBlock(_1: object, _2: number, _3: object, _4: object): boolean;	// continueDestroyBlock(BlockPos const &,uchar,Vec3 const &,bool &): bool	 /// ?continueDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEBVVec3@@AEA_N@Z
+	destroyBlock(_1: object, _2: number): boolean;	// destroyBlock(BlockPos const &,uchar): bool	 /// ?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z
+	getDestroyRate(_1: object): number;	// getDestroyRate(Block const &): float	 /// ?getDestroyRate@GameMode@@QEAAMAEBVBlock@@@Z
+	getMaxPickRange(): number;	// getMaxPickRange(void): float	 /// ?getMaxPickRange@GameMode@@QEAAMXZ
+	getPickRange(_1: object, _2: boolean): number;	// getPickRange(InputMode const &,bool): float	 /// ?getPickRange@GameMode@@UEAAMAEBW4InputMode@@_N@Z
+	interact(_1: object, _2: object): boolean;	// interact(Actor &,Vec3 const &): bool	 /// ?interact@GameMode@@UEAA_NAEAVActor@@AEBVVec3@@@Z
+	releaseUsingItem(): void;	// releaseUsingItem(void): void	 /// ?releaseUsingItem@GameMode@@UEAAXXZ
+	startBuildBlock(_1: object, _2: number): void;	// startBuildBlock(BlockPos const &,uchar): void	 /// ?startBuildBlock@GameMode@@UEAAXAEBVBlockPos@@E@Z
+	startDestroyBlock(_1: object, _2: number, _3: object): boolean;	// startDestroyBlock(BlockPos const &,uchar,bool &): bool	 /// ?startDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z
+	stopBuildBlock(): void;	// stopBuildBlock(void): void	 /// ?stopBuildBlock@GameMode@@UEAAXXZ
+	stopDestroyBlock(_1: object): void;	// stopDestroyBlock(BlockPos const &): void	 /// ?stopDestroyBlock@GameMode@@UEAAXAEBVBlockPos@@@Z
+	tick(): void;	// tick(void): void	 /// ?tick@GameMode@@UEAAXXZ
+	useItem(_1: object): boolean;	// useItem(ItemStack &): bool	 /// ?useItem@GameMode@@UEAA_NAEAVItemStack@@@Z
+	useItemOn(_1: object, _2: object, _3: number, _4: object, _5: object): boolean;	// useItemOn(ItemStack &,BlockPos const &,uchar,Vec3 const &,Block const *): bool	 /// ?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z
+}
+/*
+declare class Bedrock::NonOwnerPointer { 
+	// Attributes 
+	ptrToValue: PtrToValue;
+	// Methods 
+	// Inherited from Bedrock::NonOwnerPointer
+}
+*/
 declare class ItemStack { 
 	// Attributes 
 	itemPtr: ItemPtr;
@@ -720,32 +799,6 @@ declare class Block {
 	toDebugString(): unknown;	// toDebugString(void): class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >	 /// ?toDebugString@Block@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
 	tryToTill(_1: object, _2: object, _3: object, _4: object): boolean;	// tryToTill(BlockSource &,BlockPos const &,Actor &,ItemStack &): bool	 /// ?tryToTill@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@AEAVItemStack@@@Z
 	updateEntityAfterFallOn(_1: object, _2: object): void;	// updateEntityAfterFallOn(BlockPos const &,UpdateEntityAfterFallOnInterface &): void	 /// ?updateEntityAfterFallOn@Block@@QEBAXAEBVBlockPos@@AEAUUpdateEntityAfterFallOnInterface@@@Z
-}
-declare class GameRules { 
-	// Attributes 
-	// Methods 
-	// Inherited from GameRules
-	GameRules(): GameRules;	// GameRules(void)	 /// ??0GameRules@@QEAA@XZ
-	_setGameRule(_1: object, _2: unknown, _3: unknown, _4: boolean, _5: object, _6: object, _7: object): bigint;	 /// ?_setGameRule@GameRules@@AEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@PEAVGameRule@@TValue@4@W4Type@4@_NPEA_N4PEAVValidationError@4@@Z
-	createAllGameRulesPacket(): unknown;	// createAllGameRulesPacket(void): class std::unique_ptr<class GameRulesChangedPacket,struct std::default_delete<class GameRulesChangedPacket> >	 /// ?createAllGameRulesPacket@GameRules@@QEBA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@XZ
-	deserializeRules(_1: object): void;	// deserializeRules(GameRulesChangedPacketData const &): void	 /// ?deserializeRules@GameRules@@QEAAXAEBVGameRulesChangedPacketData@@@Z
-	getBool(_1: unknown, _2: boolean): boolean;	// getBool(GameRuleId,bool): bool	 /// ?getBool@GameRules@@QEBA_NUGameRuleId@@_N@Z
-	getInt(_1: unknown): number;	// getInt(GameRuleId): int	 /// ?getInt@GameRules@@QEBAHUGameRuleId@@@Z
-	setRule(_1: unknown, _2: boolean, _3: boolean, _4: object, _5: object, _6: object): unknown;	// setRule(GameRuleId,bool,bool,bool *,bool *,GameRule::ValidationError *): class std::unique_ptr<class GameRulesChangedPacket,struct std::default_delete<class GameRulesChangedPacket> >	 /// ?setRule@GameRules@@QEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@_N1PEA_N2PEAVValidationError@GameRule@@@Z
-	setRule(_1: unknown, _2: number, _3: boolean, _4: object, _5: object, _6: object): unknown;	// setRule(GameRuleId,float,bool,bool *,bool *,GameRule::ValidationError *): class std::unique_ptr<class GameRulesChangedPacket,struct std::default_delete<class GameRulesChangedPacket> >	 /// ?setRule@GameRules@@QEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@M_NPEA_N2PEAVValidationError@GameRule@@@Z
-}
-declare class BlockPalette { 
-	// Attributes 
-	blocks: SDKVectorContainer;
-	// Methods 
-	// Inherited from BlockPalette
-	BlockPalette(_1: object): BlockPalette;	// BlockPalette(Level &)	 /// ??0BlockPalette@@QEAA@AEAVLevel@@@Z
-	getBlock(_1: object): Block;	// getBlock(CompoundTag const &): class Block const & __ptr64	 /// ?getBlock@BlockPalette@@QEBAAEBVBlock@@AEBVCompoundTag@@@Z
-	getBlock(_1: object): Block;	// getBlock(uint const &): class Block const & __ptr64	 /// ?getBlock@BlockPalette@@QEBAAEBVBlock@@AEBI@Z
-	getBlockFromLegacyData(_1: unknown, _2: bigint): Block;	// getBlockFromLegacyData(NewBlockID,uint): class Block const & __ptr64	 /// ?getBlockFromLegacyData@BlockPalette@@QEBAAEBVBlock@@UNewBlockID@@I@Z
-	initFromBlockDefinitions(): void;	// initFromBlockDefinitions(void): void	 /// ?initFromBlockDefinitions@BlockPalette@@QEAAXXZ
-	shouldWarnFor(_1: unknown, _2: number): boolean;	// shouldWarnFor(NewBlockID,ushort): bool	 /// ?shouldWarnFor@BlockPalette@@AEBA_NUNewBlockID@@G@Z
-	switchBlock(_1: object, _2: object): Block;	// switchBlock(Block const &,BlockLegacy const &): class Block const & __ptr64	 /// ?switchBlock@BlockPalette@@QEBAAEBVBlock@@AEBV2@AEBVBlockLegacy@@@Z
 }
 declare class InventoryTransaction { 
 	// Attributes 
@@ -2277,35 +2330,6 @@ declare class FontRepository {
 	// Methods 
 	// Inherited from FontRepository
 }
-declare class LevelDataWrapper { 
-	// Attributes 
-	levelData: LevelData;
-	// Methods 
-	// Inherited from LevelDataWrapper
-}
-declare class GameMode { 
-	// Attributes 
-	// Methods 
-	// Inherited from GameMode
-	_canDestroy(_1: object, _2: number): boolean;	// _canDestroy(BlockPos const &,uchar): bool	 /// ?_canDestroy@GameMode@@AEAA_NAEBVBlockPos@@E@Z
-	attack(_1: object): boolean;	// attack(Actor &): bool	 /// ?attack@GameMode@@UEAA_NAEAVActor@@@Z
-	buildBlock(_1: object, _2: number, _3: boolean): boolean;	// buildBlock(BlockPos const &,uchar,bool): bool	 /// ?buildBlock@GameMode@@UEAA_NAEBVBlockPos@@E_N@Z
-	continueBuildBlock(_1: object, _2: number): void;	// continueBuildBlock(BlockPos const &,uchar): void	 /// ?continueBuildBlock@GameMode@@UEAAXAEBVBlockPos@@E@Z
-	continueDestroyBlock(_1: object, _2: number, _3: object, _4: object): boolean;	// continueDestroyBlock(BlockPos const &,uchar,Vec3 const &,bool &): bool	 /// ?continueDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEBVVec3@@AEA_N@Z
-	destroyBlock(_1: object, _2: number): boolean;	// destroyBlock(BlockPos const &,uchar): bool	 /// ?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z
-	getDestroyRate(_1: object): number;	// getDestroyRate(Block const &): float	 /// ?getDestroyRate@GameMode@@QEAAMAEBVBlock@@@Z
-	getMaxPickRange(): number;	// getMaxPickRange(void): float	 /// ?getMaxPickRange@GameMode@@QEAAMXZ
-	getPickRange(_1: object, _2: boolean): number;	// getPickRange(InputMode const &,bool): float	 /// ?getPickRange@GameMode@@UEAAMAEBW4InputMode@@_N@Z
-	interact(_1: object, _2: object): boolean;	// interact(Actor &,Vec3 const &): bool	 /// ?interact@GameMode@@UEAA_NAEAVActor@@AEBVVec3@@@Z
-	releaseUsingItem(): void;	// releaseUsingItem(void): void	 /// ?releaseUsingItem@GameMode@@UEAAXXZ
-	startBuildBlock(_1: object, _2: number): void;	// startBuildBlock(BlockPos const &,uchar): void	 /// ?startBuildBlock@GameMode@@UEAAXAEBVBlockPos@@E@Z
-	startDestroyBlock(_1: object, _2: number, _3: object): boolean;	// startDestroyBlock(BlockPos const &,uchar,bool &): bool	 /// ?startDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z
-	stopBuildBlock(): void;	// stopBuildBlock(void): void	 /// ?stopBuildBlock@GameMode@@UEAAXXZ
-	stopDestroyBlock(_1: object): void;	// stopDestroyBlock(BlockPos const &): void	 /// ?stopDestroyBlock@GameMode@@UEAAXAEBVBlockPos@@@Z
-	tick(): void;	// tick(void): void	 /// ?tick@GameMode@@UEAAXXZ
-	useItem(_1: object): boolean;	// useItem(ItemStack &): bool	 /// ?useItem@GameMode@@UEAA_NAEAVItemStack@@@Z
-	useItemOn(_1: object, _2: object, _3: number, _4: object, _5: object): boolean;	// useItemOn(ItemStack &,BlockPos const &,uchar,Vec3 const &,Block const *): bool	 /// ?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z
-}
 declare class GameVersion { 
 	// Attributes 
 	patch: number;
@@ -2403,25 +2427,24 @@ declare class ItemDescriptorCount {
 }
 declare class Level { 
 	// Attributes 
-	portalForcer: object;
 	blockDefinitionGroup: AnyPtr;
-	photoStorage: object;
 	vtable: object;
 	hitResult: HitResult;
-	projectileFactory: object;
 	userList: SDKVectorContainer;
 	packetSender: object;
-	dimensionMap: SDKUnorderedMap;
 	playerList: SDKVectorContainer;
 	actorInfoRegistry: AnyPtr;
 	random: Random;
 	runtimeEntityMap: SDKUnorderedMap;
 	recipes: object;
 	savedDataStorage: object;
+	portalForcer: object;
+	photoStorage: object;
 	levelDataWrapper: LevelDataWrapper;
 	random2: Random;
 	blockComponentFactory: AnyPtr;
 	spawner: object;
+	projectileFactory: object;
 	immersiveReaderString: SDKText;
 	mobList: SDKVectorContainer;
 	actorPropertyGroup: AnyPtr;
@@ -2431,9 +2454,11 @@ declare class Level {
 	playerListUUID: SDKUnorderedMap;
 	blockPalette: BlockPalette;
 	blockReducer: AnyPtr;
+	dimensionMap: SDKUnorderedMap;
 	globalActors: SDKVectorContainer;
 	spinLock: SpinLock;
 	liquidHitResult: HitResult;
+//	netEventCallback: Bedrock::NonOwnerPointer;
 	isSimPaused: number;
 	// Methods 
 	// Inherited from Level
@@ -4039,6 +4064,12 @@ declare class PlayerInventoryProxy {
 	// Methods 
 	// Inherited from PlayerInventoryProxy
 }
+declare class PtrToValue { 
+	// Attributes 
+	value: object;
+	// Methods 
+	// Inherited from PtrToValue
+}
 declare class Random { 
 	// Attributes 
 	// Methods 
@@ -4303,4 +4334,5 @@ declare class Vec3 {
 declare function print(...args): void;
 declare function log(...args): void;
 declare function dump(runtime: object): void;
+declare function isInstanceOf(runtime: object, base: object | string): boolean;
 declare function __elaDynLoad(obj: string): any;
