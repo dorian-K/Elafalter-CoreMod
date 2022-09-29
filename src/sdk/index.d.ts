@@ -4304,6 +4304,7 @@ declare class ModManager_TYPE {
 declare const ModManager: ModManager_TYPE;
 
 declare class Game_TYPE {
+	
 	getClient(): string; // Elafalter
 	getClientInstance(): ClientInstance;
 	getLocalPlayer(): LocalPlayer | undefined;
@@ -4312,7 +4313,12 @@ declare class Game_TYPE {
 }
 declare const Game: Game_TYPE;
 
+// @typedef {Object} Vec2 - Desc here or smth
 declare class Vec2 {
+	/*
+	@param {number} x - The Players X Pos
+	@param {number} y - The Players Y Pos
+	*/
 	x: number;
 	y: number;
 
@@ -4321,7 +4327,13 @@ declare class Vec2 {
 	toString(): string;
 }
 
+// @typedef {Object} Vec3 - Desc here or smth
 declare class Vec3 {
+	/*
+	@param {number} x - The Players X Pos
+	@param {number} y - The Players Y Pos
+	@param {number} z - The Players Z Pos
+	*/
 	x: number;
 	y: number;
 	z: number;
