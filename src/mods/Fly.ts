@@ -11,20 +11,20 @@ function FlyMod(mod: JsMod) {
         if (lp == null)
             return mod.setEnabled(false);
 
-        preCanFly = lp.canFly;
+        preCanFly = lp._canFly;
         hasEnabled = true;
     });
 
     mod.on("tickWorld", (lp: LocalPlayer) => {
         if (hasEnabled)
-            lp.canFly = 1;
+            lp._canFly = 1;
     });
 
     mod.on("disable", () => {
         let lp = Game.getLocalPlayer();
         if (lp == null)
             return;
-        lp.canFly = preCanFly;
+        lp._canFly = preCanFly;
         hasEnabled = false;
     });
 }

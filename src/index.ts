@@ -19,3 +19,5 @@ ModManager.registerMod(AutoSprintMod);
 ModManager.registerMod(FlyMod);
 //ModManager.registerMod(TestMod);
 ModManager.registerMod(AutoFishMod);
+
+__registerCppCore();

@@ -15,7 +15,7 @@ function AutoClickerMod(mod: JsMod) {
             lp.swing();
             const lvl = lp.getLevel();
             const hitResult = lvl.getHitResult();
-            const hitEnt = hitResult.getEntity();
+            const hitEnt = hitResult.getEntity(true);
 
             if (hitEnt != null)
                 lp.gameMode.attack(hitEnt);
